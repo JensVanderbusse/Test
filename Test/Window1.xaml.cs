@@ -267,6 +267,7 @@ namespace Test
             Properties.Settings.Default.left = this.keys[2].ToString();
             Properties.Settings.Default.right = this.keys[3].ToString();
             Properties.Settings.Default.Save();
+            //Application.Current.Shutdown();
             MainWindow o = new MainWindow();
             o.Show();
         }

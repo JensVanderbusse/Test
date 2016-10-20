@@ -1,7 +1,7 @@
 ﻿<Window x:Class="Test.Window1"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Window1" Height="500" Width="500" SizeChanged="Window_SizeChanged" KeyDown="Window_KeyDown" Closing ="Window_Closing">
+        Title="Window1" Height="400" Width="400" SizeChanged="Window_SizeChanged" KeyDown="Window_KeyDown" Closing ="Window_Closing">
     <Window.Resources>
         <RoutedUICommand x:Key="Up" Text="Text" />
         <RoutedUICommand x:Key="Right" Text="Text2" />
