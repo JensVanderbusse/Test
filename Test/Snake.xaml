@@ -1,0 +1,118 @@
+﻿<Window x:Class="Test.Snake"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Snake" Height="500" Width="500" Closing="Window_Closing" SizeChanged="Window_SizeChanged">
+
+    <Window.Resources>
+        <RoutedUICommand x:Key="Up" Text="Text" />
+        <RoutedUICommand x:Key="Right" Text="Text2" />
+        <RoutedUICommand x:Key="Left" Text="Text3" />
+        <RoutedUICommand x:Key="Down" Text="Text4" />
+    </Window.Resources>
+    <Window.CommandBindings>
+        <CommandBinding Command="{StaticResource Up}" 
+                    Executed="UpMethod" />
+        <CommandBinding Command="{StaticResource Right}" 
+                    Executed="RightMethod" />
+        <CommandBinding Command="{StaticResource Left}" 
+                    Executed="LeftMethod" />
+        <CommandBinding Command="{StaticResource Down}" 
+                    Executed="DownMethod" />
+    </Window.CommandBindings>
+    <Window.InputBindings>
+        <KeyBinding Key="Z" Command="{StaticResource Up}" />
+        <KeyBinding Key="d" Command="{StaticResource Right}" />
+        <KeyBinding Key="q" Command="{StaticResource Left}" />
+        <KeyBinding Key="s" Command="{StaticResource Down}" />
+    </Window.InputBindings>
+
+    <StackPanel>
+        <Menu>
+            <MenuItem Header="options">
+                <MenuItem Header="Difficulty">
+                    <RadioButton Name = "rb1" Content ="1" GroupName="diffi" Checked="RadioDifficulty"></RadioButton>
+                    <RadioButton Name = "rb2" Content ="2" GroupName="diffi" Checked="RadioDifficulty"></RadioButton>
+                    <RadioButton Name = "rb3" Content ="3" GroupName="diffi" Checked="RadioDifficulty"></RadioButton>
+                    <RadioButton Name = "rb4" Content ="dynamic" GroupName="diffi" Checked="RadioDifficulty"></RadioButton>
+                </MenuItem>
+                <MenuItem Header="Field">
+                    <RadioButton Name = "klein" Content ="small" GroupName="groot" Checked="RadioGroot"></RadioButton>
+                    <RadioButton Name = "gemiddeld" Content ="average" GroupName="groot" Checked="RadioGroot"></RadioButton>
+                    <RadioButton Name = "groot" Content ="big" GroupName="groot" Checked="RadioGroot"></RadioButton>                   
+                </MenuItem>
+                <MenuItem Header="controls" Click="Controls"></MenuItem>
+                <MenuItem Header="Highscores" Click="GetHighscores"></MenuItem>
+                <MenuItem Header="Reset Highscore" Click="ResetHighscore"></MenuItem>
+            </MenuItem>
+            <MenuItem Header="New game" Click="StartGame"/>
+        </Menu>
+        <StackPanel Orientation="Horizontal">
+            <Label Content="games played:"></Label>
+            <Label Content="0" Name="lblGespeeld"></Label> <!--reset bij sluiten spel(was als test voor iets)-->
+            <Label Content="highscore:" Margin="30,0,0,0"></Label>
+            <Label Content="0" Name="lblHighScore"></Label>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <StackPanel>
+                <Label Content="difficulty:"></Label>
+                <Label Name="lblDifficulty" Content="2"></Label>
+                <Label Content="lengte:"></Label>
+                <Label Content="1" Name="lblLengte"></Label>
+                <Label Content="score:"></Label>
+                <Label Content="0" Name="lblScore"></Label>
+                
+            </StackPanel>
+            <Grid Name="speelveld" Margin="10" Width="200" Height="200">
+            <!--<Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>-->
+
+                <!--<Image Name="snake" Source="images/bold.png" Grid.Column="9" Grid.Row="9"></Image>-->
+            <!--<Label Content="" Name="snake" Background="Black" Grid.Column="9" Grid.Row="9"></Label>-->              
+            <!--<Label Name="target" Background="red" Grid.Column="9" Grid.Row="10" Visibility="Hidden"></Label>-->            
+        </Grid>
+        </StackPanel>
+    </StackPanel>
+</Window>

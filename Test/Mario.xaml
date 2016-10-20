@@ -1,0 +1,31 @@
+﻿<Window x:Class="Test.Mario"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Mario" Height="350" Width="525" Closing="Window_Closing">
+    <Window.Resources>
+        <RoutedUICommand x:Key="Jump" Text="Text" />
+        <RoutedUICommand x:Key="Right" Text="Text2" />
+        <RoutedUICommand x:Key="Left" Text="Text3" />
+    </Window.Resources>
+
+    <Window.CommandBindings>
+        <CommandBinding Command="{StaticResource Jump}" 
+                    Executed="JumpMethod" />
+        <CommandBinding Command="{StaticResource Right}" 
+                    Executed="RightMethod" />
+        <CommandBinding Command="{StaticResource Left}" 
+                    Executed="LeftMethod" />
+    </Window.CommandBindings>
+
+    <Window.InputBindings>
+        <KeyBinding Key="up"  Command="{StaticResource Jump}" />
+        <KeyBinding Key="d" Command="{StaticResource Right}" />
+        <KeyBinding Key="q" Command="{StaticResource Left}" />
+    </Window.InputBindings>
+    <Grid>
+        <Rectangle x:Name="mario" Fill="#FF90F660" HorizontalAlignment="Left" Height="22" Margin="81,255,0,0" Stroke="Black" VerticalAlignment="Top" Width="30"/>
+        <Button x:Name="jump"  Content="jump" HorizontalAlignment="Left" Margin="19,10,0,0" VerticalAlignment="Top" Width="75" Click="jump_Click">
+        </Button>
+        <Button x:Name="right" Content="right" HorizontalAlignment="Left" Margin="99,10,0,0" VerticalAlignment="Top" Width="75" Command="{StaticResource Right}" />
+    </Grid>
+</Window>

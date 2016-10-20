@@ -1,0 +1,32 @@
+﻿<Window x:Class="Test.InputKeys"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="InputKeys" Height="230" Width="175">
+    <Grid Margin="15">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Label Name="lblQuestion" Grid.Column="0" Grid.Row="0">set keys</Label>
+        <Label Name="lblUp" Grid.Column="0" Grid.Row="1">Up</Label>
+        <Label Name="lblDown" Grid.Column="0" Grid.Row="2">Down</Label>
+        <Label Name="lblLeft" Grid.Column="0" Grid.Row="3">Left</Label>
+        <Label Name="lblRight" Grid.Column="0" Grid.Row="4">Right</Label>
+
+        <TextBox Name="tbUp" Grid.Column="1" Grid.Row="1" KeyUp="tbUp_KeyUp"></TextBox>
+        <TextBox Name="tbDown" Grid.Column="1" Grid.Row="2" KeyUp="tbDown_KeyDown"></TextBox>
+        <TextBox Name="tbLeft" Grid.Column="1" Grid.Row="3" KeyUp="tbLeft_KeyLeft"></TextBox>
+        <TextBox Name="tbRight" Grid.Column="1" Grid.Row="4" KeyUp="tbRight_KeyRight"></TextBox>
+
+        <Button Grid.Column="0" Grid.Row="5" IsCancel="True" MinWidth="60">_Cancel</Button>
+        <Button IsDefault="True" Name="btnDialogOk" Click="btnDialogOk_Click" MinWidth="60" Grid.Column="1" Grid.Row="5">Ok</Button>
+    </Grid>
+</Window>

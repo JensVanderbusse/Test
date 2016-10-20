@@ -1,0 +1,8 @@
+﻿<Window x:Class="Test.TestGrid"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="TestGrid" Height="300" Width="300" Closing="Window_Closing">
+    <Grid Name="puipui">
+        
+    </Grid>
+</Window>
